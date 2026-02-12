@@ -17,11 +17,11 @@ permalink: "products/{{ product.fileSlug }}/index.html"
     MRP: ₹{{ product.data.mrp }}
   </p>
 
-  {% if product.data.short_description %}
-  <p class="mb-8 text-gray-300">
-    {{ product.data.short_description }}
-  </p>
-  {% endif %}
+  {% if product.templateContent %}
+<div class="mb-8 text-gray-300">
+  {{ product.templateContent | safe }}
+</div>
+{% endif %}
 
   <!-- Images -->
   {% if product.data.images %}
