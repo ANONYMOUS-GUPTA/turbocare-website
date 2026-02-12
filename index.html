@@ -72,7 +72,9 @@ title: TurboCare
           
           <!-- Hero Image -->
           <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-            <img src="{{ homepage.hero_image }}" class="rounded-2xl shadow-lg">
+            {% if homepage.hero_image %}
+  <img src="{{ homepage.hero_image }}" class="rounded-2xl shadow-lg">
+{% endif %}
           </div>
         </div>
       </div>
