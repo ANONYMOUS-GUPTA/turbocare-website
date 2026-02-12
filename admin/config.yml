@@ -6,6 +6,25 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+
+  # HOMEPAGE CONTENT
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "content/homepage.yml"
+        label: "Homepage Content"
+        name: "homepage"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+
+          - { label: "Customers Count", name: "customers", widget: "string" }
+          - { label: "Dealers Count", name: "dealers", widget: "string" }
+          - { label: "Cities Count", name: "cities", widget: "string" }
+          - { label: "Products Count", name: "products_count", widget: "string" }
+
+  # PRODUCTS
   - name: "products"
     label: "Products"
     folder: "products"
@@ -17,4 +36,51 @@ collections:
       - { label: "MRP", name: "mrp", widget: "number" }
       - { label: "Short Description", name: "short_description", widget: "text" }
       - { label: "Full Description", name: "body", widget: "markdown" }
-      - { label: "Images", name: "images", widget: "list", field: {label: Image, name: image, widget: image} }
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        field: { label: "Feature", name: "feature", widget: "string" }
+      - label: "Specifications"
+        name: "specifications"
+        widget: "list"
+        fields:
+          - { label: "Spec Title", name: "spec_title", widget: "string" }
+          - { label: "Spec Value", name: "spec_value", widget: "string" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        field: { label: Image, name: image, widget: image }
+
+  # CATEGORIES
+  - name: "categories"
+    label: "Categories"
+    folder: "categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Category Name", name: "title", widget: "string" }
+      - { label: "Category Description", name: "description", widget: "text" }
+      - { label: "Category Banner Image", name: "banner", widget: "image" }
+
+  # FOOTER
+  - name: "footer"
+    label: "Footer"
+    files:
+      - file: "content/footer.yml"
+        label: "Footer Content"
+        name: "footer"
+        fields:
+          - { label: "Company Email", name: "email", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+
+  # DEALER PAGE
+  - name: "dealer"
+    label: "Dealer Page"
+    files:
+      - file: "content/dealer.yml"
+        label: "Dealer Page Content"
+        name: "dealer"
+        fields:
+          - { label: "Dealer Page Title", name: "title", widget: "string" }
+          - { label: "Dealer Page Description", name: "description", widget: "text" }
