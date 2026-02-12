@@ -28,6 +28,8 @@ collections:
   - name: "products"
     label: "Products"
     folder: "products"
+extension: "md"
+format: "frontmatter"
     create: true
     slug: "{{slug}}"
     fields:
