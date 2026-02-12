@@ -2,6 +2,7 @@
 title: Rolex 130Ltr
 category: Coolers
 mrp: 15995
+permalink: false
 short_description: |-
   1. 20" Fan Size
   2. 130Ltr Tank Capacity 
