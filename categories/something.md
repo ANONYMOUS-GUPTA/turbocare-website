@@ -1,2 +1,0 @@
-tags: category
-permalink: false
