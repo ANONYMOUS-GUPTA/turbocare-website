@@ -13,17 +13,22 @@ permalink: "dealer/index.html"
     {{ dealer.description }}
   </p>
 
-  <form class="bg-gray-900 p-8 rounded-2xl space-y-6">
+  <form name="dealer-inquiry"
+      method="POST"
+      data-netlify="true"
+      class="bg-gray-900 p-8 rounded-2xl space-y-6">
 
-    <input type="text" placeholder="Dealer Name" class="w-full p-3 rounded bg-gray-800 text-white">
-    <input type="text" placeholder="City" class="w-full p-3 rounded bg-gray-800 text-white">
-    <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-800 text-white">
-    <input type="tel" placeholder="Phone Number" class="w-full p-3 rounded bg-gray-800 text-white">
+  <input type="hidden" name="form-name" value="dealer-inquiry">
 
-    <button class="bg-blue-500 px-6 py-3 rounded-full">
-      Submit Inquiry
-    </button>
+  <input type="text" name="name" placeholder="Dealer Name" required class="w-full p-3 rounded bg-gray-800 text-white">
+  <input type="text" name="city" placeholder="City" required class="w-full p-3 rounded bg-gray-800 text-white">
+  <input type="email" name="email" placeholder="Email" required class="w-full p-3 rounded bg-gray-800 text-white">
+  <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 rounded bg-gray-800 text-white">
 
-  </form>
+  <button type="submit" class="bg-blue-500 px-6 py-3 rounded-full">
+    Submit Inquiry
+  </button>
+
+</form>
 
 </section>
