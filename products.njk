@@ -7,7 +7,19 @@ pagination:
 permalink: "products/{{ product.fileSlug }}/index.html"
 title: "{{ product.data.title }} | TurboCare"
 ---
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.data.title }}",
+  "image": "{% if product.data.images and product.data.images.length > 0 %}{{ product.data.images[0] }}{% endif %}",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "{{ product.data.mrp }}"
+  }
+}
+</script>
 <section class="py-20 px-6 max-w-5xl mx-auto text-white">
 
   <h1 class="text-4xl font-bold mb-6 text-blue-400">
