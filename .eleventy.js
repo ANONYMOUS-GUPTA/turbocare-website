@@ -7,6 +7,10 @@ eleventyConfig.addCollection("products", function(collectionApi) {
   return collectionApi.getFilteredByGlob("products/*.md");
 });
 
+eleventyConfig.addCollection("categories", function(collectionApi) {
+  return collectionApi.getFilteredByTag("category");
+});
+
   return {
     dir: {
       input: ".",
