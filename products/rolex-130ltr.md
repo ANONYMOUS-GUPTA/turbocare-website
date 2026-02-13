@@ -2,6 +2,7 @@
 title: Rolex 130Ltr
 category: Coolers
 mrp: 15995
+featured: true
 tags: product
 permalink: false
 short_description: |-
