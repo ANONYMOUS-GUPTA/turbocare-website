@@ -20,14 +20,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Open and Close Modals
-function openModal(category) {
-  document.getElementById('modal-' + category).style.display = 'flex';
-}
 
-function closeModal(category) {
-  document.getElementById('modal-' + category).style.display = 'none';
-}
 const carousel = document.getElementById('carousel');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
