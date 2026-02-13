@@ -34,7 +34,13 @@ format: "frontmatter"
     slug: "{{slug}}"
     fields:
       - { label: "Product Name", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "string" }
+      - label: "Category"
+  name: "category"
+  widget: "relation"
+  collection: "categories"
+  search_fields: ["title"]
+  value_field: "title"
+  display_fields: ["title"]
       - { label: "MRP", name: "mrp", widget: "number" }
       - { label: "Short Description", name: "short_description", widget: "text" }
       - { label: "Full Description", name: "body", widget: "markdown" }
