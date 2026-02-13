@@ -6,6 +6,11 @@ module.exports = function(eleventyConfig) {
 eleventyConfig.addCollection("products", function(collectionApi) {
   return collectionApi.getFilteredByGlob("products/*.md");
 });
+eleventyConfig.addCollection("featured", function(collectionApi) {
+  return collectionApi
+    .getFilteredByGlob("products/*.md")
+    .filter(item => item.data.featured === true);
+});
 
 eleventyConfig.addCollection("categories", function(collectionApi) {
   return collectionApi.getFilteredByTag("category");
