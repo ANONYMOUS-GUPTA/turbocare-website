@@ -11,7 +11,7 @@ collections:
   - name: "homepage"
     label: "Homepage"
     files:
-      - file: "content/homepage.yml"
+      - file: "_data/homepage.yml"
         label: "Homepage Content"
         name: "homepage"
         fields:
@@ -68,7 +68,7 @@ format: "frontmatter"
   - name: "footer"
     label: "Footer"
     files:
-      - file: "content/footer.yml"
+      - file: "_data/footer.yml"
         label: "Footer Content"
         name: "footer"
         fields:
@@ -80,7 +80,7 @@ format: "frontmatter"
   - name: "dealer"
     label: "Dealer Page"
     files:
-      - file: "content/dealer.yml"
+      - file: "_data/dealer.yml"
         label: "Dealer Page Content"
         name: "dealer"
         fields:
