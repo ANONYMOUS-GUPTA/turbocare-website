@@ -176,56 +176,39 @@ title: TurboCare
   <h2 class="text-3xl md:text-4xl font-bold mb-12">
     Explore Our <span class="text-blue-400">Product Categories</span>
   </h2>
-  
+
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-    
-    <!-- Coolers -->
-    <div class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-2">
-      <img src="https://via.placeholder.com/300x200?text=Coolers" alt="Coolers" class="rounded-t-2xl w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">Coolers</h3>
-        <p class="text-gray-400 mb-4">Stay cool with our energy-efficient and stylish coolers.</p>
-        <button onclick="openModal('coolers')" class="cta-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm">
-          Explore Products
-        </button>
-      </div>
+
+  {% for category in collections.categories %}
+  
+  <div class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-2">
+
+    {% if category.data.banner %}
+      <img src="{{ category.data.banner }}" class="rounded-t-2xl w-full">
+    {% endif %}
+
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2">
+        {{ category.data.title }}
+      </h3>
+
+      {% if category.data.description %}
+      <p class="text-gray-400 mb-4">
+        {{ category.data.description }}
+      </p>
+      {% endif %}
+
+      <a href="/categories/{{ category.fileSlug }}/"
+         class="cta-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm">
+         Explore Products
+      </a>
     </div>
-    
-    <!-- LED TVs -->
-    <div class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-2">
-      <img src="https://via.placeholder.com/300x200?text=LED+TVs" alt="LED TVs" class="rounded-t-2xl w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">LED TVs</h3>
-        <p class="text-gray-400 mb-4">Crystal-clear display and smart features for your entertainment.</p>
-        <button onclick="openModal('ledtvs')" class="cta-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm">
-          Explore Products
-        </button>
-      </div>
-    </div>
-    
-    <!-- Metal Almirahs -->
-    <div class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-2">
-      <img src="https://via.placeholder.com/300x200?text=Metal+Almirahs" alt="Metal Almirahs" class="rounded-t-2xl w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">Metal Almirahs</h3>
-        <p class="text-gray-400 mb-4">Sturdy and stylish storage solutions for your home.</p>
-        <button onclick="openModal('almirahs')" class="cta-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm">
-          Explore Products
-        </button>
-      </div>
-    </div>
-    
-    <!-- Speakers -->
-    <div class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-2">
-      <img src="https://via.placeholder.com/300x200?text=Speakers" alt="Speakers" class="rounded-t-2xl w-full">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2">Speakers</h3>
-        <p class="text-gray-400 mb-4">Immersive sound quality for music, movies, and gaming.</p>
-        <button onclick="openModal('speakers')" class="cta-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm">
-          Explore Products
-        </button>
-      </div>
-    </div>
+
+  </div>
+
+  {% endfor %}
+
+</div>
     
   </div>
 </section>
